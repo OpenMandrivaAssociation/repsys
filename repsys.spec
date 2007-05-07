@@ -2,7 +2,7 @@
 %define my_py_ver %(echo %py_ver | tr -d '.')
 
 Name: repsys
-Version: 1.6.16
+Version: 1.6.17
 Epoch: 1
 Release: %mkrel %rel
 Summary: Tools for Mandriva Linux repository access and management
@@ -21,6 +21,17 @@ BuildArch: noarch
 
 %description
 Tools for Mandriva Linux repository access and management.
+
+%package ldap
+Group: Development/Other
+Summary: Repsys plugin to retrieve maintainer information from LDAP
+Requires: repsys >= 1.6.16 python-ldap
+
+%description ldap
+A Repsys plugin that enables to obtain maintainer information show in
+changelogs from a LDAP server. 
+
+See repsys --help-plugin ldapusers for more information. Also #30549.
 
 %prep
 %setup -q
@@ -70,4 +81,7 @@ rm -rf %{buildroot}
 %{py_sitedir}/*.egg-info
 %endif
 
+%files ldap
+%doc README.LDAP
+%{py_sitedir}/RepSys/plugins/ldapusers.py*
 
