@@ -1,4 +1,4 @@
-%define rel 2
+%define rel 3
 %define my_py_ver %(echo %py_ver | tr -d '.')
 
 Name: repsys
@@ -82,6 +82,7 @@ rm -rf %{buildroot}
 %{_bindir}/getsrpm-mdk
 %{_datadir}/repsys
 %{py_sitedir}/RepSys
+%exclude %{py_sitedir}/RepSys/plugins/ldapusers.py*
 %if %my_py_ver >= 25
 %{py_sitedir}/*.egg-info
 %endif
