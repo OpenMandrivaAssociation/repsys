@@ -1,4 +1,4 @@
-%define rel 1
+%define rel 2
 %define my_py_ver %(echo %py_ver | tr -d '.')
 
 Name: repsys
@@ -10,7 +10,7 @@ Group: Development/Other
 Source: %{name}-%{version}.tar.bz2
 Source1: mdk-rebrand-mdk
 License: GPL
-URL: http://qa.mandriva.com/twiki/bin/view/Main/RepositorySystem
+URL: http://svn.mandriva.com/cgi-bin/viewvc.cgi/soft/build_system/repsys/
 Requires: python-cheetah
 %py_requires
 Buildrequires: python-devel
@@ -21,6 +21,11 @@ BuildArch: noarch
 
 %description
 Tools for Mandriva Linux repository access and management.
+
+<http://wiki.mandriva.com/en/Development/Packaging/RepositorySystem>
+
+<http://wiki.mandriva.com/en/Development/Packaging/Tools/repsys>
+
 
 %package ldap
 Group: Development/Other
