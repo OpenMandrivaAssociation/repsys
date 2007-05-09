@@ -1,8 +1,8 @@
-%define rel 3
+%define rel 1
 %define my_py_ver %(echo %py_ver | tr -d '.')
 
 Name: repsys
-Version: 1.6.17
+Version: 1.6.17.1
 Epoch: 1
 Release: %mkrel %rel
 Summary: Tools for Mandriva Linux repository access and management
