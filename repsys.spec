@@ -11,7 +11,7 @@ Source: %{name}-%{version}.tar.bz2
 Source1: mdk-rebrand-mdk
 License: GPL
 URL: http://svn.mandriva.com/cgi-bin/viewvc.cgi/soft/build_system/repsys/
-Requires: python-cheetah subversion
+Requires: python-cheetah subversion ssh
 %py_requires
 Buildrequires: python-devel
 BuildRoot: %{_tmppath}/%{name}-%{version}-root
