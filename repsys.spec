@@ -2,7 +2,7 @@
 %define my_py_ver %(echo %py_ver | tr -d '.')
 
 Name: repsys
-Version: 1.6.17.1
+Version: 1.6.18
 Epoch: 1
 Release: %mkrel %rel
 Summary: Tools for Mandriva Linux repository access and management
@@ -77,6 +77,7 @@ rm -rf %{buildroot}
 
 %files
 %defattr(-,root,root)
+%doc CHANGES
 %attr(0644,root,root) %config(noreplace) %{_sysconfdir}/repsys.conf
 %{_bindir}/repsys
 %{_bindir}/getsrpm-mdk
