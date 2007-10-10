@@ -33,10 +33,11 @@ Summary: Repsys plugin to retrieve maintainer information from LDAP
 Requires: repsys >= 1.6.16 python-ldap
 
 %description ldap
-A Repsys plugin that enables to obtain maintainer information show in
+A Repsys plugin that allows retrieving maintainer information shown in
 changelogs from a LDAP server. 
 
-See repsys --help-plugin ldapusers for more information. Also #30549.
+See repsys --help-plugin ldapusers for more information. Also
+http://qa.mandriva.com/show_bug.cgi?id=30549
 
 %prep
 %setup -q
