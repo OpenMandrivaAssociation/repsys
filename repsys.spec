@@ -14,7 +14,6 @@ URL: http://svn.mandriva.com/cgi-bin/viewvc.cgi/soft/build_system/repsys/
 Requires: python-cheetah subversion openssh-clients python-rpm
 %py_requires
 Buildrequires: python-devel
-BuildRoot: %{_tmppath}/%{name}-%{version}-root
 BuildRequires: python 
 BuildRequires: python-devel
 BuildArch: noarch
