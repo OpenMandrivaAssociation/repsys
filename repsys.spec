@@ -1,4 +1,4 @@
-%define rel 2
+%define rel 3
 %define my_py_ver %(echo %py_ver | tr -d '.')
 
 Name: repsys
@@ -9,6 +9,7 @@ Summary: Tools for Mandriva Linux repository access and management
 Group: Development/Other
 Source: %{name}-%{version}.tar.bz2
 Source1: mdk-rebrand-mdk
+Patch0: repsys-1.6.19.2-py24-urlparse.patch
 License: GPL
 URL: http://svn.mandriva.com/cgi-bin/viewvc.cgi/soft/build_system/repsys/
 Requires: python-cheetah subversion openssh-clients python-rpm
@@ -41,6 +42,7 @@ http://qa.mandriva.com/show_bug.cgi?id=30549
 
 %prep
 %setup -q
+%patch0 -p0 -b urlparse
 
 %build
 python setup.py build
