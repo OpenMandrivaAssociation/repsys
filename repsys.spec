@@ -1,4 +1,4 @@
-%define rel 1
+%define rel 2
 %define my_py_ver %(echo %py_ver | tr -d '.')
 
 Name: repsys
