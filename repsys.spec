@@ -1,15 +1,15 @@
-%define rel 3
+%define rel 1
 %define my_py_ver %(echo %py_ver | tr -d '.')
 
 Name: repsys
-Version: 1.6.19.2
+Version: 1.6.90
 Epoch: 1
 Release: %mkrel %rel
 Summary: Tools for Mandriva Linux repository access and management
 Group: Development/Other
 Source: %{name}-%{version}.tar.bz2
 Source1: mdk-rebrand-mdk
-Patch0: repsys-1.6.19.2-py24-urlparse.patch
+#Patch0: repsys-1.6.19.2-py24-urlparse.patch
 License: GPL
 URL: http://svn.mandriva.com/cgi-bin/viewvc.cgi/soft/build_system/repsys/
 Requires: python-cheetah subversion openssh-clients python-rpm
@@ -42,7 +42,7 @@ http://qa.mandriva.com/show_bug.cgi?id=30549
 
 %prep
 %setup -q
-%patch0 -p0 -b urlparse
+##patch0 -p0 -b urlparse
 
 %build
 python setup.py build
@@ -80,11 +80,12 @@ rm -rf %{buildroot}
 
 %files
 %defattr(-,root,root)
-%doc CHANGES
+%doc CHANGES repsys-example.conf
 %attr(0644,root,root) %config(noreplace) %{_sysconfdir}/repsys.conf
 %{_bindir}/repsys
 %{_bindir}/getsrpm-mdk
 %{_datadir}/repsys
+%{_mandir}/*/*
 %{py_sitedir}/RepSys
 %exclude %{py_sitedir}/RepSys/plugins/ldapusers.py*
 %if %my_py_ver >= 25
