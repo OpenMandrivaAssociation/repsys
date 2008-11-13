@@ -3,11 +3,12 @@
 Name: repsys
 Version: 1.7
 Epoch: 1
-Release: %mkrel 1
+Release: %mkrel 2
 Summary: Tools for Mandriva Linux repository access and management
 Group: Development/Other
 Source: %{name}-%{version}.tar.bz2
 Source1: mdk-rebrand-mdk
+Source2: repsys.conf
 License: GPL
 URL: http://svn.mandriva.com/cgi-bin/viewvc.cgi/soft/build_system/repsys/
 Requires: python-cheetah subversion openssh-clients python-rpm
@@ -40,6 +41,7 @@ http://qa.mandriva.com/show_bug.cgi?id=30549
 
 %prep
 %setup -q
+install -m 0644 %_sourcedir/repsys.conf %_builddir/%name-%version
 
 %build
 python setup.py build
