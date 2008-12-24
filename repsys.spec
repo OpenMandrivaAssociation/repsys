@@ -3,7 +3,7 @@
 Name: repsys
 Version: 1.7
 Epoch: 1
-Release: %mkrel 3
+Release: %mkrel 4
 Summary: Tools for Mandriva Linux repository access and management
 Group: Development/Other
 Source: %{name}-%{version}.tar.bz2
@@ -13,11 +13,8 @@ Patch0: repsys-1.7-putsrpm-fixes.patch
 License: GPL
 URL: http://svn.mandriva.com/cgi-bin/viewvc.cgi/soft/build_system/repsys/
 Requires: python-cheetah subversion openssh-clients python-rpm
-%py_requires
-Buildrequires: python-devel
+%py_requires -d
 BuildRoot: %{_tmppath}/%{name}-%{version}-root
-BuildRequires: python 
-BuildRequires: python-devel
 BuildArch: noarch
 
 %description
