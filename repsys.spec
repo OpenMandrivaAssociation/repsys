@@ -3,13 +3,14 @@
 Name: repsys
 Version: 1.7
 Epoch: 1
-Release: %mkrel 5
+Release: %mkrel 6
 Summary: Tools for Mandriva Linux repository access and management
 Group: Development/Other
 Source: %{name}-%{version}.tar.bz2
 Source1: mdk-rebrand-mdk
 Source2: repsys.conf
 Patch0: repsys-1.7-putsrpm-fixes.patch
+Patch1: repsys-1.7-co-allow-disabling-mirror.patch
 License: GPL
 URL: http://svn.mandriva.com/cgi-bin/viewvc.cgi/soft/build_system/repsys/
 Requires: python-cheetah subversion openssh-clients python-rpm
