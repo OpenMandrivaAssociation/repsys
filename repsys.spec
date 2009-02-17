@@ -41,6 +41,7 @@ http://qa.mandriva.com/show_bug.cgi?id=30549
 %prep
 %setup -q
 %patch0 -p0 -b .putsrpm-fixes
+%patch1 -p0 -b .co-allow-disabling-mirror
 install -m 0644 %_sourcedir/repsys.conf %_builddir/%name-%version
 
 %build
