@@ -66,17 +66,6 @@ install -m 0755 create-srpm %{buildroot}%{_datadir}/repsys/create-srpm
 install -m 0755 getsrpm-mdk %{buildroot}%{_bindir}/getsrpm-mdk
 install -m 0644 repsys.conf %{buildroot}%{_sysconfdir}
 
-%post
-if [ "$1" = "2" ]; then
-	if ! grep -q '^create-srpm' %{_sysconfdir}/repsys.conf; then
-		cat >> %{_sysconfdir}/repsys.conf <<EOF
-
-[helper]
-create-srpm = %{_datadir}/repsys/create-srpm
-EOF
-	fi
-fi
-
 %clean
 rm -rf %{buildroot}
 
