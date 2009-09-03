@@ -3,7 +3,7 @@
 Name: repsys
 Version: 1.7
 Epoch: 1
-Release: %mkrel 7
+Release: %mkrel 8
 Summary: Tools for Mandriva Linux repository access and management
 Group: Development/Other
 Source: %{name}-%{version}.tar.bz2
