@@ -1,17 +1,14 @@
 %define my_py_ver %(echo %py_ver | tr -d '.')
 
 Name: repsys
-Version: 1.7
+Version: 1.8
 Epoch: 1
-Release: %mkrel 8
+Release: %mkrel 1
 Summary: Tools for Mandriva Linux repository access and management
 Group: Development/Other
 Source: %{name}-%{version}.tar.bz2
 Source1: mdk-rebrand-mdk
 Source2: repsys.conf
-Patch0: repsys-1.7-putsrpm-fixes.patch
-Patch1: repsys-1.7-co-allow-disabling-mirror.patch
-Patch2: repsys-1.7-submit-allow-only-pkgname.patch
 License: GPL
 URL: http://svn.mandriva.com/cgi-bin/viewvc.cgi/soft/build_system/repsys/
 Requires: python-cheetah subversion openssh-clients python-rpm
@@ -41,9 +38,6 @@ http://qa.mandriva.com/show_bug.cgi?id=30549
 
 %prep
 %setup -q
-%patch0 -p0 -b .putsrpm-fixes
-%patch1 -p0 -b .co-allow-disabling-mirror
-%patch2 -p0 -b .submit-allow-only-pkgname
 install -m 0644 %_sourcedir/repsys.conf %_builddir/%name-%version
 
 %build
@@ -63,7 +57,7 @@ mkdir -p %{buildroot}%{_datadir}/repsys/
 mkdir -p %{buildroot}%{_bindir}/
 install -m 0755 %{SOURCE1} %{buildroot}%{_datadir}/repsys/rebrand-mdk
 install -m 0755 create-srpm %{buildroot}%{_datadir}/repsys/create-srpm
-install -m 0755 getsrpm-mdk %{buildroot}%{_bindir}/getsrpm-mdk
+install -m 0755 repsys-ssh %{buildroot}%{_bindir}/repsys-ssh
 install -m 0644 repsys.conf %{buildroot}%{_sysconfdir}
 
 %clean
@@ -74,7 +68,7 @@ rm -rf %{buildroot}
 %doc CHANGES repsys-example.conf
 %attr(0644,root,root) %config(noreplace) %{_sysconfdir}/repsys.conf
 %{_bindir}/repsys
-%{_bindir}/getsrpm-mdk
+%{_bindir}/repsys-ssh
 %{_datadir}/repsys
 %{_mandir}/*/*
 %{py_sitedir}/RepSys
