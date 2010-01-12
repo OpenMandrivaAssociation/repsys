@@ -1,9 +1,13 @@
 %define my_py_ver %(echo %py_ver | tr -d -c '[:digit:]')
+%if "%my_py_ver" == ""
+# Assume 2.6 if we don't have python at src.rpm creation time
+%define my_py_ver 26
+%endif
 
 Name: repsys
 Version: 1.8
 Epoch: 1
-Release: %mkrel 3
+Release: %mkrel 4
 Summary: Tools for Mandriva Linux repository access and management
 Group: Development/Other
 Source: %{name}-%{version}.tar.bz2
