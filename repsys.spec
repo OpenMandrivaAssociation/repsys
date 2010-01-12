@@ -1,9 +1,9 @@
-%define my_py_ver %(echo %py_ver | tr -d '.')
+%define my_py_ver %(echo %py_ver | tr -d -c '[:digit:]')
 
 Name: repsys
 Version: 1.8
 Epoch: 1
-Release: %mkrel 2
+Release: %mkrel 3
 Summary: Tools for Mandriva Linux repository access and management
 Group: Development/Other
 Source: %{name}-%{version}.tar.bz2
