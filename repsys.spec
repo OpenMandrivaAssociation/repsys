@@ -52,7 +52,7 @@ rm -rf %{buildroot}
 
 python setup.py install --root=%{buildroot}
 # Using compile inline since niemeyer's python macros still not available on mdk rpm macros
-find %{buildroot}%{py_sitedir} -name '*.pyc' -exec rm -f {} \; 
+find %{buildroot}%{py_puresitedir} -name '*.pyc' -exec rm -f {} \; 
 python -c "import sys, os, compileall; br='%{buildroot}'; compileall.compile_dir(sys.argv[1], ddir=br and 
 (sys.argv[1][len(os.path.abspath(br)):]+'/') or None)" %{buildroot}%{py_sitedir}
 
@@ -75,13 +75,13 @@ rm -rf %{buildroot}
 %{_bindir}/repsys-ssh
 %{_datadir}/repsys
 %{_mandir}/*/*
-%{py_sitedir}/RepSys
-%exclude %{py_sitedir}/RepSys/plugins/ldapusers.py*
+%{py_puresitedir}/RepSys
+%exclude %{py_puresitedir}/RepSys/plugins/ldapusers.py*
 %if %my_py_ver >= 25
-%{py_sitedir}/*.egg-info
+%{py_puresitedir}/*.egg-info
 %endif
 
 %files ldap
 %doc README.LDAP
-%{py_sitedir}/RepSys/plugins/ldapusers.py*
+%{py_puresitedir}/RepSys/plugins/ldapusers.py*
 
