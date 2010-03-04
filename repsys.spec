@@ -8,9 +8,9 @@
 %endif
 
 Name: repsys
-Version: 1.8
+Version: 1.9
 Epoch: 1
-Release: %mkrel 4
+Release: %mkrel 1
 Summary: Tools for Mandriva Linux repository access and management
 Group: Development/Other
 Source: %{name}-%{version}.tar.bz2
