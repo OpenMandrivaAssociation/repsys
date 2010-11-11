@@ -10,7 +10,7 @@
 Name: repsys
 Version: 1.9
 Epoch: 1
-Release: %mkrel 3
+Release: %mkrel 4
 Summary: Tools for Mandriva Linux repository access and management
 Group: Development/Other
 Source: %{name}-%{version}.tar.bz2
@@ -73,7 +73,7 @@ rm -rf %{buildroot}
 %files
 %defattr(-,root,root)
 %doc CHANGES repsys-example.conf
-%attr(0644,root,root) %config(noreplace) %{_sysconfdir}/repsys.conf
+%attr(0644,root,root) %{_sysconfdir}/repsys.conf
 %{_bindir}/repsys
 %{_bindir}/repsys-ssh
 %{_datadir}/repsys
