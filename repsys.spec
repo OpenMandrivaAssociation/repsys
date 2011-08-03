@@ -8,9 +8,9 @@
 %endif
 
 Name: repsys
-Version: 1.10
+Version: 1.11
 Epoch: 1
-Release: 2
+Release: 1
 Summary: Tools for Mandriva Linux repository access and management
 Group: Development/Other
 Source: %{name}-%{version}.tar.bz2
