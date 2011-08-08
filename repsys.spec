@@ -10,7 +10,7 @@
 Name: repsys
 Version: 1.11
 Epoch: 1
-Release: 1
+Release: 2
 Summary: Tools for Mandriva Linux repository access and management
 Group: Development/Other
 Source: %{name}-%{version}.tar.bz2
@@ -49,6 +49,7 @@ http://qa.mandriva.com/show_bug.cgi?id=30549
 %setup -q
 install -m 0644 %_sourcedir/repsys.conf %_builddir/%name-%version
 %patch0 -p1 -b .new-ssh-url
+%patch1 -p1 -b .undeclared-variable
 
 %build
 python setup.py build
