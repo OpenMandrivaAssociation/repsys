@@ -10,7 +10,7 @@
 Name: repsys
 Version: 1.11
 Epoch: 1
-Release: 2
+Release: 3
 Summary: Tools for Mandriva Linux repository access and management
 Group: Development/Other
 Source: %{name}-%{version}.tar.bz2
@@ -18,6 +18,7 @@ Source1: mdk-rebrand-mdk
 Source2: repsys.conf
 Patch0: repsys-1.9-new-ssh-url.patch
 Patch1: repsys-1.11-undeclared-variable.patch
+Patch2: repsys-1.11-fix-undefined-function.patch
 License: GPL
 URL: http://svn.mandriva.com/cgi-bin/viewvc.cgi/soft/build_system/repsys/
 Requires: python-cheetah subversion openssh-clients python-rpm
@@ -50,6 +51,7 @@ http://qa.mandriva.com/show_bug.cgi?id=30549
 install -m 0644 %_sourcedir/repsys.conf %_builddir/%name-%version
 %patch0 -p1 -b .new-ssh-url
 %patch1 -p1 -b .undeclared-variable
+%patch2 -p1 -b .undeclared-function
 
 %build
 python setup.py build
