@@ -1,0 +1,12 @@
+diff -p -up ./RepSys/svn.py.orig ./RepSys/svn.py
+--- ./RepSys/svn.py.orig	2010-11-26 16:56:10.000000000 -0200
++++ ./RepSys/svn.py	2010-11-26 16:56:24.000000000 -0200
+@@ -38,7 +38,7 @@ class SVN:
+                 if "Permission denied" in e.args[0]:
+                     msg = ("It seems ssh-agent or ForwardAgent are not setup "
+                            "or your username is wrong. See "
+-                           "http://wiki.mandriva.com/en/Development/Docs/Contributor_Tricks#SSH_configuration"
++                           "http://wiki.mandriva.com/en/Development/Basic_SSH_Configuration"
+                            " for more information.")
+                 elif "authorization failed" in e.args[0]:
+                     msg = ("Note that repsys does not support any HTTP "
