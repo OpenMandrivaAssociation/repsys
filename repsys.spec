@@ -46,7 +46,7 @@ http://qa.mandriva.com/show_bug.cgi?id=30549
 
 %prep
 %setup -q
-install -m 0644 %_sourcedir/repsys.conf %_builddir/%name-%version
+install -m 0644 %{SOURCE2} %_builddir/%name-%version
 %patch0 -p1 -b .new-ssh-url
 
 %build
