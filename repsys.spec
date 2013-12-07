@@ -10,7 +10,7 @@
 Name: repsys
 Version: 1.10
 Epoch: 1
-Release: 5
+Release: 6
 Summary: Tools for Mandriva Linux repository access and management
 Group: Development/Other
 Source: %{name}-%{version}.tar.bz2
