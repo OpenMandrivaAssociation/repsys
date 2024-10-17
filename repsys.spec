@@ -18,7 +18,7 @@ Source1: mdk-rebrand-mdk
 Source2: repsys.conf
 Patch0: repsys-1.9-new-ssh-url.patch
 License: GPL
-URL: http://svn.mandriva.com/cgi-bin/viewvc.cgi/soft/build_system/repsys/
+URL: https://svn.mandriva.com/cgi-bin/viewvc.cgi/soft/build_system/repsys/
 Requires: python-cheetah subversion openssh-clients python-rpm
 %py_requires -d
 BuildRoot: %{_tmppath}/%{name}-%{version}-root
